@@ -1,8 +1,13 @@
 import React from 'react'
+import MessageInput from './components/MessageInput'
+import MessageList from './components/MessageList'
 
 const Chat = () => {
     return (
-        <div>Chat</div>
+        <div className="flex flex-col h-full">
+            <MessageList />
+            <MessageInput />
+        </div>
     )
 }
 
