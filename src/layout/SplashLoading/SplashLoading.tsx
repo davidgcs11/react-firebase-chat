@@ -3,6 +3,7 @@ import { Transition } from '@headlessui/react'
 const SplashLoading = (props: { show: boolean }) => {
     return (
         <Transition
+            className="absolute"
             show={props.show}
             leave="transition-opacity duration-500"
             leaveFrom="opacity-100"

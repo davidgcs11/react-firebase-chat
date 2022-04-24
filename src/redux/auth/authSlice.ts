@@ -19,7 +19,6 @@ export const subscribeToAuthChanges = (): AppThunk => (
     getState
 ) => {
     fireAuth.onAuthStateChanged((fireUser) => {
-        console.log(fireUser?.email, selectAuth(getState()));
         let user: IUser | null = null;
         if (fireUser) {
             user = {
@@ -31,7 +30,7 @@ export const subscribeToAuthChanges = (): AppThunk => (
                 lastLoginAt: fireUser.metadata.lastSignInTime ? new Date(fireUser.metadata.lastSignInTime).getTime() : null,
             }
         }
-        dispatch(authSlice.actions.setUserAction(user));
+        dispatch(authSlice.actions.setUser(user));
     });
 };
 
@@ -49,7 +48,7 @@ const authSlice = createSlice({
     name: 'auth',
     initialState: initialState,
     reducers: {
-        setUserAction: (state, action: PayloadAction<IUser | null>) => {
+        setUser: (state, action: PayloadAction<IUser | null>) => {
             state.user = action.payload;
             state.status = 'idle';
         },

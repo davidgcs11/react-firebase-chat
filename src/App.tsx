@@ -20,7 +20,7 @@ function App() {
       <Toaster />
       <SplashLoading show={authStore.status === 'initial-loading'} />
       {authStore.status !== 'initial-loading' && (
-        <>
+        <div className="h-full flex flex-col">
           <AppBar />
           <Routes>
             <Route path="/" element={
@@ -34,7 +34,7 @@ function App() {
               </ProtectedRoute>
             } />
           </Routes>
-        </>
+        </div>
       )}
 
     </div>
