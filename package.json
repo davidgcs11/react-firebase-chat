@@ -1,7 +1,7 @@
 {
   "name": "react-firebase-chat-app",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://davidgcs11.github.io/react-firebase-chat",
   "dependencies": {
     "@headlessui/react": "^1.5.0",
     "@reduxjs/toolkit": "^1.8.1",
@@ -27,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +48,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
+    "gh-pages": "^3.2.3",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24"
   }
