@@ -21,8 +21,6 @@ const sendMessage = async (user: IUser, message: string, messages: ChatMessage[]
         const neededTimestamp = lastUserMessage.timestamp + neededDelay;
         const currentTimestamp = Date.now();
 
-        console.log(neededTimestamp);
-
         if (currentTimestamp < neededTimestamp) {
             const targetDate = dayjs(neededTimestamp);
             throw new Error(`Please wait until ${targetDate.format('DD/MM/YYYY hh:mm:ss A')} to send this message`);
